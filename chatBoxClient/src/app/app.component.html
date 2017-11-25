@@ -1,0 +1,35 @@
+<div class="container">
+	<div *ngIf = "!isLoggedIn">
+	<!-- Modal -->
+    <style type="text/css">
+		.registrationContainer{margin-top:20%;padding:15px;box-shadow: 3px 2px 7px -1px}
+		.registrationContainer button{float: right;}
+	</style>
+	  <div class="container">
+     	<div class="col s11 registrationContainer">
+          <div class="row">
+              <div class="input-field col s12">
+                <input [(ngModel)]="username" id="userName" 
+                	type="text">
+                <label for="userName">Please enter your username</label>
+			  </div>
+			  <div class="input-field col s12">
+                <input [(ngModel)]="password" id="password" 
+                	type="password">
+                <label for="userName">Please enter your password</label>
+							</div>
+							<span *ngIf = "!isValidUser" style="color:red">Invalid username or password !!</span>
+          </div>
+	      <button (click)="login()" type="submit" 
+	    	class="btn waves-effect waves-light col s3"  
+			name="action" >Login</button>
+		</div><a type="button" [routerLink] = "['/signUp']"
+		class="btn btn-warning" >Sign Up</a>
+	<div style="clear:both;"></div>
+</div>
+</div>
+<router-outlet></router-outlet>
+<app-message-box *ngIf = "isLoggedIn"></app-message-box>
+</div>
+
+

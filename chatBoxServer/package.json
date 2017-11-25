@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Chat box server",
+  "main": "index.js",
+  "scripts": {
+    "test": "hello server",
+    "dev": "nodemon index.js"
+  },
+  "author": "Adarsh",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.15.2",
+    "mongoose": "^4.5.8",
+    "socket.io": "^2.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}

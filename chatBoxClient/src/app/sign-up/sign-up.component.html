@@ -1,0 +1,18 @@
+<div class="container jumbotron">
+<div class="row">
+  <div class="col-md-12">
+    <form>
+    <div class="form-group">
+      <input type="text" [(ngModel)] = "username" name="username" id="usernameSignup" class="form-control">
+      <input type="password" [(ngModel)] = "password" name="password" id="passwordSignup" class="form-control">
+      <input type="password" [(ngModel)] = "confirmPassword" name="confirmPassword" class="form-control">
+    <div class="form-group">
+      <button (click)="signUp()" type="submit" 
+      class="btn btn-success"  
+    name="action" >Sign Up</button>
+    </div>
+    </div>
+    </form>
+  </div>
+</div>
+</div>

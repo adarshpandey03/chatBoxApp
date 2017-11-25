@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-7" style="overflow:auto">
+          <ul class="list-group">
+            <li *ngFor = "let message of messageList" class="list-group-item" >
+                <span>{{message.username}} :</span><span>{{message.message}}</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-5" style="overflow:auto">
+            <ul class="list-group">
+              <li *ngFor = "let user of usersList" class="list-group-item" >
+                  {{user}}
+              </li>
+            </ul>
+          </div>
+      </div>
+  <div class="row footer navbar-fixed-bottom">
+    <div class="col-md-8">
+      <div class="form-group">
+      <input type="text"  id="message" class="form-control" (keyup.enter)="sendMessage()" placeholder="Type your message here" [(ngModel)]="message">
+      <!--<emoji-input  id="message" [popupAnchor]="'bottom'"  (keyup.enter)="sendMessage()" placeholder="Type your message here" [(ngModel)]="message"></emoji-input>-->
+    </div>
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-success btn-big" id="send" (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>
