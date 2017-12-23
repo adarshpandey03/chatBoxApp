@@ -1,0 +1,42 @@
+<div style="overflow:auto;max-height:70%" *ngIf = "!individualSelected">
+<mat-card class="example-card" *ngFor = "let user of userList">
+  <mat-card-header (click)="openPrivateChat(user)">
+    <img mat-card-avatar [ngClass]="user.state == 'active' ? 'activeStateImage' : 'inactiveStateImage'" [src]="user.image"/>
+    <mat-card-title>{{user.username}}  <span *ngIf = "unreadMap.get(user.username) != 0" class="badge badge-css" >{{unreadMap.get(user.username)}}</span></mat-card-title>
+    <mat-card-subtitle [ngClass]="user.state == 'active' ? 'activeState' : 'inactiveState'">{{user.state}}</mat-card-subtitle>
+  </mat-card-header>
+</mat-card>
+</div>
+<div *ngIf = "individualSelected">
+    <div class="row" >
+        <div class="col-md-9">
+            <h4 *ngIf="toUser.state == 'active'" class="activeState">Chatting with {{toUser.username}}</h4>
+            <h4 *ngIf="toUser.state != 'active'" class="inactiveState">{{toUser.username}} is inactive, leave a message</h4>
+          </div>
+          <div class="col-md-3">
+  <button (click)="backToIndividualList(toUser)"><span class = "btn btn-back"></span>Back</button>
+</div>
+
+</div>
+  <div class="row" >
+      <div class="col-md-12 whiteBoard" style="overflow:auto">
+        <ul class="list-group">
+          <li *ngFor = "let message of mergeSortedMessageList" class="list-group-item" >
+            <!-- <div *ngIf="message.fromUser == toUser.username"> -->
+              <span>{{message.fromUser}} :</span><span>{{message.message}}</span> :<span>{{message.timeStamp}}</span>
+            <!-- </div> -->
+          </li>
+        </ul>  
+      </div>
+    </div>
+      <div class="row">
+          <div class="col-md-9">
+            <div class="form-group">
+            <input type="text"  id="message" class="form-control" (keyup.enter)="sendMessageIndividual()" placeholder="Type your message here" [(ngModel)]="individualMessage">
+          </div>
+          </div>
+          <div class="col-md-3">
+            <button class="btn btn-success sendButton " id="send" (click)="sendMessageIndividual()">Send</button>
+          </div>
+        </div>
+  </div>

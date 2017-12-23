@@ -1,11 +1,40 @@
-<div class="container jumbotron">
-<div class="row">
-  <div class="col-md-12">
+<style type="text/css">
+  .signupContainer{
+    position: absolute;
+  height: 80%;
+  width: 70%;
+  top: 10%;
+  left: 15%;
+    box-shadow: 3px 2px 7px -1px}
+    .signupContainer input{
+      margin: 0 0 5px 0;
+      }
+  .signupContainer button{
+    font-size: 16px;
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+    float: right;}
+  .signupContainer a{
+    font-size: 16px;
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+    float: right;
+    }
+</style>
+<div class="container jumbotron signupContainer">
+    <h1>Sign Up</h1>
+    <hr>
     <form>
     <div class="form-group">
-      <input type="text" [(ngModel)] = "username" name="username" id="usernameSignup" class="form-control">
-      <input type="password" [(ngModel)] = "password" name="password" id="passwordSignup" class="form-control">
-      <input type="password" [(ngModel)] = "confirmPassword" name="confirmPassword" class="form-control">
+        <label for = "username">Username</label>
+      <input type="text" [(ngModel)] = "username" (blur)="checkUsernameAvailability()" name="username" id="usernameSignup" class="form-control" placeholder="Enter your username">
+      <span *ngIf = "!isUserExists" style="color:red">Username already exists, choose another !!</span><br>
+      <label for = "password">Password</label>
+      <input type="password" [(ngModel)] = "password" name="password" id="passwordSignup" class="form-control" placeholder="Secure login requires a password">
+      <label for = "confirmPassword">Confirm Password</label>
+      <input type="password" [(ngModel)] = "confirmPassword" (blur)="comparePasswords()" name="confirmPassword" class="form-control" placeholder="Confirm password entered above">
+      <span *ngIf = "!isPasswordMatch" style="color:red">Password entries do not match !!</span><br>
+      <image-upload (uploadFinished)="onUploadFinished($event)"></image-upload>
     <div class="form-group">
       <button (click)="signUp()" type="submit" 
       class="btn btn-success"  
@@ -13,6 +42,4 @@
     </div>
     </div>
     </form>
-  </div>
-</div>
 </div>

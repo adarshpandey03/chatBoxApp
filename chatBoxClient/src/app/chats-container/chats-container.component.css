@@ -1,0 +1,112 @@
+@keyframes in  {from{opacity: 0}to {opacity: 1}}
+@keyframes out {from{opacity: 1}to {opacity: 0}}
+.joinNotification{
+    display: none;
+    font-size: 24px;
+    font-style: italic;
+    color: white;
+    text-align: center;
+}
+.joinNotificationIn{
+    display: block;
+    position: absolute;
+    top:5%;
+    left:65%;
+    height: 10%;
+    width: 20%;
+    background-color: orangered;
+    opacity: 0;
+    animation: in 3s ease forwards 1 
+}
+.joinNotificationOut{
+    display: block;
+    position: absolute;
+    top:5%;
+    left:65%;
+    height: 10%;
+    width: 20%;
+    background-color: orangered;
+    opacity: 0;
+    animation: out 3s ease forwards 1 
+}
+.chatBoxHeader {
+    height: 25%;
+    width: 100%;
+    margin-bottom: 1%;
+}
+.activeUserButton {
+    
+}
+.circular-btn {
+    width: 60px;
+    height: 60px;
+    /* padding: 10px 16px; */
+    font-size: 24px;
+    line-height: 1.33;
+    border-radius: 30px;
+    background-color: red;
+    color: white;
+}
+.btn3d {
+    position:relative;
+    top: -6px;
+    border:0;
+     transition: all 40ms linear;
+     margin-top:10px;
+     margin-bottom:10px;
+     margin-left:2px;
+     margin-right:2px;
+}
+.btn3d:active:focus,
+.btn3d:focus:hover,
+.btn3d:focus {
+    outline-style:none;
+    -moz-outline-style:none;
+         outline:medium none;
+}
+.btn3d:active, .btn3d.active {
+    top:2px;
+}
+.btn3d.btn-default {
+    color: #666666;
+    box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255,255,255,0.10) inset, 0 8px 0 0 #BEBEBE, 0 8px 8px 1px rgba(0,0,0,.2);
+    background-color:#f9f9f9;
+}
+.tab-group {
+    border: 1px solid #e8e8e8;
+    height:75vh;
+  }
+  
+  .tab-content {
+    padding: 16px;
+  }
+  .avatar {
+    height: 110px;
+    width: 140px;
+    border-radius: 50%;
+  }
+/*   .container {
+    width: 500px;
+    height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  } */
+  
+  .sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sidenav {
+    padding: 20px;
+  }
+  .flex-container {
+    display: flex;
+  }
+  .logoutButton {
+    margin-left: 50%;
+  }
+ /*  .mat-tab-body-wrapper {
+      height:100% !important ;
+  } */

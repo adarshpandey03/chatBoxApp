@@ -1,0 +1,30 @@
+.activeState {
+    color : green;
+}
+.inactiveState {
+     color : #E0E07F;
+}    
+.activeStateImage {
+    border: 3px solid green;
+}
+.inactiveStateImage {
+    border: 3px solid #E0E07F;
+} 
+.whiteBoard {
+    /* display: block; */
+    background-color: white;
+    width: 100%;
+    height: 50vh;
+    border: 1px solid black;
+    margin: 0% 0% 1% 0%;
+}
+.sendButton {
+    width: 100%;
+}
+.mat-tab-body-wrapper {
+    height:100% !important ;
+}
+.badge-css {
+    background-color: orangered;
+    font-size: 18px;
+}

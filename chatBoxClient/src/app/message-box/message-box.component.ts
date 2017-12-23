@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from "@angular/router";
 import { ChatService } from '../chat.service';
 import { User } from '../models/user';
 
@@ -10,9 +11,8 @@ import { User } from '../models/user';
 export class MessageBoxComponent implements OnInit {
   public message = "";
   public messageList: User[] = [];
-  public usersList = [];
   public modalVisible: boolean;
-  constructor(private chatService: ChatService) { 
+  constructor(private chatService: ChatService, private router: Router) { 
   }
 
   ngOnInit() {
@@ -20,15 +20,15 @@ export class MessageBoxComponent implements OnInit {
     this.chatService.getMessage().subscribe(data => {
       this.messageList.push(data);
     });
-    this.chatService.getUsers().subscribe(data => {
-      this.usersList = data;
-    });
   }
 
   sendMessage() {
     console.log("Send Message Called");
-    let user = new User(this.chatService.getCurrentUser(),this.message);
+    let processedMessge = this.message.trim();
+    if(processedMessge != ""){
+    let user = new User(this.chatService.getCurrentUser(),processedMessge);
     this.chatService.sendMessage(user);
     this.message ="";
+    }
   }
 }

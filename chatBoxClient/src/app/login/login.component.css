@@ -1,0 +1,29 @@
+.loginContainer{
+    position: absolute;
+height: 60%;
+width: 70%;
+top: 25%;
+left: 15%;
+    box-shadow: 3px 2px 7px -1px}
+    .loginContainer input{
+        margin: 0 0 5px 0;
+        }
+.loginContainer button{
+    font-size: 16px;
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+    float: right;}
+.loginContainer a{
+    font-size: 16px;
+    margin: 5px 0px 5px 5px;
+    padding: 5px 5px 5px 5px;
+    float: right;
+    }
+    .mat-tab-body-wrapper {
+        height:100% !important ;
+    }
+    .appContainer {
+        width: 96%;
+        margin-right: 2%;
+        margin-left: 2%;
+    }
