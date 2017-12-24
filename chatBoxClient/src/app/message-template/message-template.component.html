@@ -1,0 +1,26 @@
+<div class="row messageTemplate" *ngIf = "message.fromUser != primaryUser.username">
+  <div class="col-md-1 avatarStyle">
+      <img class = "avatar"  [src]=" message.fromUser == primaryUser.username ? primaryUser.image : toUser.image"/>
+  </div>
+  <div class="col-md-1 userStyle">
+    <h4>{{message.fromUser}}</h4>
+    <h6>{{getFormatedDate(message.timeStamp)}}</h6>
+  </div>
+  <div class="col-md-10 textStyle">
+    <p style="padding-left:5px">
+      {{message.message}}
+    </p></div>
+</div>
+<div class="row messageTemplate" *ngIf = "message.fromUser == primaryUser.username">
+    <div class="col-md-10 textStyleLeft">
+      <p style="padding-left:5px;float:right;">
+        {{message.message}}
+      </p></div>
+      <div class="col-md-1 userStyleLeft">
+          <h4>{{message.fromUser}}</h4>
+          <h6>{{getFormatedDate(message.timeStamp)}}</h6>
+        </div>
+        <div class="col-md-1 avatarStyleLeft">
+            <img class = "avatar"  [src]=" message.fromUser == primaryUser.username ? primaryUser.image : toUser.image"/>
+        </div>
+  </div>

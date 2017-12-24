@@ -14,19 +14,38 @@
             <h4 *ngIf="toUser.state != 'active'" class="inactiveState">{{toUser.username}} is inactive, leave a message</h4>
           </div>
           <div class="col-md-3">
-  <button (click)="backToIndividualList(toUser)"><span class = "btn btn-back"></span>Back</button>
+              <button mat-raised-button color="primary" (click)="backToIndividualList(toUser)">Back</button>
+  <!-- <button (click)="backToIndividualList(toUser)"><span class = "btn btn-back"></span>Back</button> -->
 </div>
 
 </div>
   <div class="row" >
       <div class="col-md-12 whiteBoard" style="overflow:auto">
-        <ul class="list-group">
+        <!-- <ul class="list-group">
           <li *ngFor = "let message of mergeSortedMessageList" class="list-group-item" >
-            <!-- <div *ngIf="message.fromUser == toUser.username"> -->
               <span>{{message.fromUser}} :</span><span>{{message.message}}</span> :<span>{{message.timeStamp}}</span>
-            <!-- </div> -->
           </li>
-        </ul>  
+        </ul>  -->
+       <!--  <mat-card class="example-card" *ngFor = "let message of mergeSortedMessageList">
+            <mat-card-header>
+              <img mat-card-avatar [src]=" message.fromUser == primaryUser.username ? primaryUser.image : toUser.image"/>
+              <mat-card-title>{{message.fromUser}}</mat-card-title>
+              <mat-card-subtitle>{{getFormatedDate(message.timeStamp)}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p style="padding-left:5px">
+                {{message.message}}
+              </p>
+            </mat-card-content>
+           <!--  <mat-card-actions>
+              <button mat-button>LIKE</button>
+              <button mat-button>SHARE</button>
+            </mat-card-actions> -->
+        <!--   </mat-card>  -->
+        <app-message-template *ngFor = "let message of mergeSortedMessageList" 
+                              [primaryUser]="primaryUser" [toUser] = "toUser"
+                              [message] = "message"
+        ></app-message-template>
       </div>
     </div>
       <div class="row">

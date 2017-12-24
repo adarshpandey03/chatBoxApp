@@ -170,4 +170,9 @@ export class IndividualChatComponent implements OnInit {
       this.mergeSortedMessageList = this.merge(this.messageListIndividual, this.myMessageListIndividual);
       console.log("User :: " +     this.mergeSortedMessageList);
     }
+    getFormatedDate(timestamp:string){
+      let time = new Date(Number(timestamp));
+      let fullDate = /* time.getDate() + "-" + time.getMonth() + "-" + time.getFullYear() + ", " + */ time.getHours() + ":" + time.getMinutes();
+      return fullDate ;
+    }
 }

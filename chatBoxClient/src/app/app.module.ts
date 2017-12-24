@@ -13,7 +13,8 @@ import { MessageBoxComponent } from './message-box/message-box.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
 import { ChatsContainerComponent } from './chats-container/chats-container.component';
-import { IndividualChatComponent } from './individual-chat/individual-chat.component'
+import { IndividualChatComponent } from './individual-chat/individual-chat.component';
+import { MessageTemplateComponent } from './message-template/message-template.component'
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
     SignUpComponent,
     MessageBoxComponent,
     ChatsContainerComponent,
-    IndividualChatComponent
+    IndividualChatComponent,
+    MessageTemplateComponent
   ],
   imports: [
     BrowserModule, FormsModule, BrowserAnimationsModule, MaterialDesignsModule, HttpClientModule, RouterModule.forRoot(appRoutes),  ImageUploadModule.forRoot()
