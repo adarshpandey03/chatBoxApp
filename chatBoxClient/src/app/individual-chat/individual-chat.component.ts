@@ -123,7 +123,7 @@ export class IndividualChatComponent implements OnInit {
     }
   }
   
-  merge(array1, array2)
+  /* merge(array1, array2)
   {
     console.log("In Merge call");
       let final: any[] = [];
@@ -160,7 +160,22 @@ export class IndividualChatComponent implements OnInit {
         console.log("################## " + final[i].message);
        }
       return final;
-    }
+    } */
+    merge(array1, array2)
+    {
+      console.log("In Merge call");
+        let final: any[] = [];
+        for( let i = 0; i<array1.length;i++){
+          final.push(array1[i]);
+         }
+         for( let i = 0; i<array2.length;i++){
+          final.push(array2[i]);
+         }
+         final = final.sort(function(a,b){
+          return Number(a.timeStamp) - Number(b.timeStamp);
+         });
+        return final;
+      }
     updateMessageListView(user){
       this.messageListIndividual = this.myMap.get(user);
       console.log("this.messageListIndividual :: " +     this.messageListIndividual);
